@@ -13,4 +13,6 @@ contributes:
         - ams.lua
       # disable quarto refs div injection
       cite-method: natbib
+  html: default  
+  jats: default
 

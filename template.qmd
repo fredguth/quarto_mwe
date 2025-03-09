@@ -18,6 +18,7 @@ abstract: |
   libero in, rutrum lorem. 
 format:
   ams-typst: default
+  jats_publishing: default
 bibliography: refs.bib
 ---
 
