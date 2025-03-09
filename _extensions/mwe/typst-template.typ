@@ -10,6 +10,8 @@
 #let ams-article(
   // The article's title.
   title: "Paper title",
+  
+  date: none,
 
   // An array of authors. For each author you can specify a name,
   // department, organization, location, and email. Everything but
@@ -26,6 +28,30 @@
   // works.
   bibliography-file: none,
 
+
+  // ADDED
+  
+  journal: (
+    publisher-id: none,
+    id: none,
+    title: none,
+    abbrev-title: none,
+    pissn: none,
+    eissn: none,
+    publisher-name: none,
+    publisher-loc: none,
+  ),
+
+  article: (
+    heading: none,
+    volume: none,
+    issue: none,
+    doi: none,
+    elocation-id: none,
+    published_date: (year: none, month: none, day: none),
+    received_date: (year: none, month: none, day: none),
+    accepted_date: (year: none, month: none, day: none),
+  ),
   // The document's content.
   body,
 ) = {
@@ -174,6 +200,7 @@
     emph(it.body)
   })
 
+
   // Display the title and authors.
   v(35pt, weak: true)
   align(center, upper({
@@ -198,6 +225,34 @@
   // Display the article's contents.
   v(29pt, weak: true)
   body
+
+  pagebreak()
+  // Display metadata about the journal
+  text[
+    title: #title\
+    date: #date\
+    authors: #author-string\
+    journal:\
+      title: #journal.title\
+      abbrev-title: #journal.abbrev-title\
+      pissn: #journal.pissn\
+      eissn: #journal.eissn\
+      publisher-name: #journal.publisher-name\
+      publisher-loc: #journal.publisher-loc\
+    article: \
+      heading: #article.heading\
+      volume: #article.volume\
+      issue: #article.issue\
+      doi: #article.doi\
+      elocation-id: #article.elocation-id\
+      scielo-id: #article.scielo-id\
+      published_date: #article.published_date.display()\
+      received_date: #article.received_date.display()\
+      accepted_date: #article.accepted_date.display()\
+  ]
+  
+
+
 
   // Display the bibliography, if any is given.
   if bibliography-file != none {
