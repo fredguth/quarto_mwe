@@ -4,6 +4,7 @@ format:
     template: scielo.template
     output-ext: "scielo.xml"
     citeproc: true
+    csl: abnt.csl
     filters: 
       - at: post-render
         path: footnote-type.lua
