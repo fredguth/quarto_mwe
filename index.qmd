@@ -1,10 +1,10 @@
 ---
 format:
   jats: 
-    template: scielo-template.xml
+    template: scielo.template
     output-ext: "scielo.xml"
     citeproc: true
-    filters:
+    filters: 
       - at: post-render
         path: footnote-type.lua
 
