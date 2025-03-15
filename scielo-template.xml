@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.1 20151215//EN" "https://jats.nlm.nih.gov/publishing/1.1/JATS-journalpublishing1.dtd">
+<article xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:mml="http://www.w3.org/1998/Math/MathML"
+article-type="research-article"
+dtd-version="1.1" 
+specific-use="sps-1.9"
+xml:lang="$lang$">
+
+<!-- Journal Metadata -->
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">$journal.publisher-id$</journal-id>
+<journal-title-group>
+<journal-title>$journal.title$</journal-title>
+<abbrev-journal-title abbrev-type="publisher">$journal.abbrev-title$</abbrev-journal-title>
+</journal-title-group>
+<issn pub-type="ppub">$journal.pissn$</issn>
+<issn pub-type="epub">$journal.eissn$</issn>
+<publisher>
+<publisher-name>$journal.publisher-name$</publisher-name>
+<publisher-loc>$journal.publisher-loc$</publisher-loc>
+</publisher>
+</journal-meta>
+
+<!-- Article Metadata -->
+<article-meta>
+<article-id pub-id-type="doi">$article.doi$</article-id>
+<article-id pub-id-type="publisher-id">$article.elocation-id$</article-id>
+  
+  
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>$if(article.heading)$$article.heading$$else$research-article$endif$</subject>
+</subj-group>
+</article-categories>
+  
+<title-group>
+<article-title>$title$</article-title>
+$if(subtitle)$
+<subtitle>$subtitle$</subtitle>
+$endif$
+</title-group>
+  
+
+<contrib-group>
+$for(author)$
+<contrib contrib-type="author">
+$if(author.orcid)$
+<contrib-id contrib-id-type="orcid">$author.orcid$</contrib-id>
+$endif$
+<name>
+<surname>$author.surname$</surname>
+<given-names>$author.given-names$</given-names>
+</name>
+$if(author.affiliations)$
+$for(author.affiliations)$
+<xref ref-type="aff" rid="aff_$author.id$_$it.id$">$author.id$_$it.id$</xref>
+$endfor$
+$endif$
+</contrib>
+$endfor$
+</contrib-group>
+$for(author)$
+$for(author.affiliations)$
+<aff id="aff_$author.id$_$it.id$">
+<label>$author.id$_$it.id$</label>
+$if(it.orgname)$
+<institution content-type="original">$it.orgname$</institution>
+<institution content-type="normalized">$it.orgname$</institution>
+<institution content-type="orgname">$it.orgname$</institution>
+$endif$
+$if(it.orgdiv)$
+<institution content-type="orgdiv1">$it.orgdiv$</institution>
+$endif$
+$if(it.city)$
+<addr-line>
+<city>$it.city$</city>
+$if(it.state)$
+<state>$it.state$</state>
+$endif$
+</addr-line>
+<country country="$author.metadata.country-code$">$it.country$</country> 
+<email>$author.email$</email>
+$endif$
+</aff>
+$endfor$
+$endfor$
+<!-- Publication Date -->
+<pub-date date-type="pub" publication-format="electronic">
+<day>12</day>
+<month>03</month>
+<year>2025</year>
+</pub-date>
+  
+<!-- Volume and Issue -->
+$if(article.volume)$
+<volume>$article.volume$</volume>
+$else$
+$if(citation.volume)$
+<volume>$citation.volume$</volume>
+$endif$
+$endif$
+  
+$if(article.issue)$
+<issue>$article.issue$</issue>
+$else$
+$if(citation.issue)$
+<issue>$citation.issue$</issue>
+$endif$
+$endif$
+  
+<!-- Page numbers or elocation ID -->
+$if(fpage)$
+<fpage>$fpage$</fpage>
+$if(lpage)$
+<lpage>$lpage$</lpage>
+$endif$
+$else$
+<elocation-id>$article.elocation-id$</elocation-id>
+$endif$
+  
+<history>
+<date date-type="received">
+<day>$article.received-date.day$</day>
+<month>$article.received-date.month$</month>
+<year>$article.received-date.year$</year>
+</date>
+<date date-type="accepted">
+<day>$article.accepted-date.day$</day>
+<month>$article.accepted-date.month$</month>
+<year>$article.accepted-date.year$</year>
+</date>
+</history>
+<!-- Permissions -->
+<permissions>
+<license license-type="open-access" xlink:href="http://creativecommons.org/licenses/by/4.0/" xml:lang="$lang$">
+<license-p>Este é um artigo publicado em acesso aberto sob uma licença Creative Commons</license-p>
+</license>
+</permissions>
+  
+  
+<abstract>
+<title>Resumo</title>
+$resumo$
+</abstract>
+  
+  
+  
+<trans-abstract xml:lang="en">
+<title>Abstract</title>
+$abstract$
+</trans-abstract>
+  
+  
+<!-- Keywords in English -->
+$if(keywords)$
+<kwd-group xml:lang="en">
+<title>Keywords:</title>
+$for(keywords)$
+<kwd>$keywords$</kwd>
+$endfor$
+</kwd-group>
+$endif$
+  
+<!-- Keywords in Portuguese -->
+$if(palavras-chave)$
+<kwd-group xml:lang="pt">
+<title>Palavras-chave:</title>
+$for(palavras-chave)$
+<kwd>$palavras-chave$</kwd>
+$endfor$
+</kwd-group>
+$endif$
+</article-meta>
+</front>
+
+$if(notes)$
+<notes>$notes$</notes>
+$endif$
+
+<body>
+$body$
+</body>
+
+<back>
+$if(back)$
+$back$
+$endif$
+</back>
+$if(floats-group)$
+<floats-group>
+$floats-group$
+</floats-group>
+$endif$
+
+</article>
