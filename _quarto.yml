@@ -4,7 +4,7 @@ format:
   typst:
     keep-typ: true
     template: template.typ
-    csl: abnt-ipea.csl # does not work
+    bibliographystyle: abnt-ipea.csl 
     filters:
       - critic-markup.lua
     format-resources:
