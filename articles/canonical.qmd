@@ -1,14 +1,4 @@
 ---
-format:
-  jats: 
-    template: scielo.template
-    output-ext: "scielo.xml"
-    citeproc: true
-    csl: abnt.csl
-    filters: 
-      - at: post-render
-        path: footnote-type.lua
-
 lang: pt
 
 title: "\"Presunção relativa\": quando a narrativa policial é colocada à prova nos processos de tráfico de drogas"
@@ -16,13 +6,13 @@ title: "\"Presunção relativa\": quando a narrativa policial é colocada à pro
 
 author:
   - id: mj
-    # name: #--> default quarto structure does not work with pandoc template 
-    #   given: Maria Gorete
-    #   family: Marques de Jesus
-    #   literal: Maria Gorete Marques de Jesus
-    #   dropping-particle: de
-    given-names: Maria Gorete
-    surname: Marques de Jesus
+    name: #--> default quarto structure does not work with pandoc template 
+      given: Maria Gorete
+      family: Marques de Jesus
+      literal: Maria Gorete Marques de Jesus
+      dropping-particle: de
+    # given-names: Maria Gorete
+    # surname: Marques de Jesus
     email: gorete.marques@gmail.com
     orcid: 0000-0003-2667-8736
     note: >
@@ -53,9 +43,14 @@ author:
         url: https://ufscar.br
   
   - id: ma
+    name: #--> default quarto structure does not work with pandoc template 
+      given: Mariana Celano
+      family: Souza Amaral
+      literal: Mariana Celano de Souza Amaral
+      dropping-particle: de
     # name: Mariana Celano de Souza Amaral
-    given-names: Mariana Celano de Souza 
-    surname: Amaral
+    # given-names: Mariana Celano de Souza 
+    # surname: Amaral
     orcid: 0000-0003-1634-8709
     email: mariana.amaral@usp.br
     note: "Mestre pelo programa de pós-graduação em Sociologia pela Universidade de São Paulo (USP)."
@@ -150,7 +145,6 @@ article:
 
 
 bibliography: refs.bib
-
 
 
 ---
