@@ -1,5 +1,21 @@
 project:
   output-dir: _output  
-format: 
-  mwe-typst: default
+format:
+  typst:
+    keep-typ: true
+    template: template.typ
+    csl: abnt-ipea.csl # does not work
+    filters:
+      - critic-markup.lua
+    format-resources:
+      - abnt-ipea.csl
+      - glogo.gif
+      - cc_by.svg
+    template-partials:
+      - typst-template.typ
+      - typst-show.typ
+      - notes.typ
+      - biblio.typ
+      - definitions.typ
+
   

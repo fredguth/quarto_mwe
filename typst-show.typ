@@ -3,7 +3,9 @@ $if(title)$
   title: [$title$],
 $endif$
 
-
+$if(csl)$
+  csl: [$csl$],
+$endif$
 
 
 
